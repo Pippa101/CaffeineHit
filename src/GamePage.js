@@ -1,20 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Timer from "./Timer";
+import CoffeeOrder from "./CoffeeOrder";
+import ResultsPage from "./ResultsPage";
+
 const GamePage = () => {
   const [timeLeft, setTimeLeft] = useState(60);
 
-  useEffect(() => {
-    const timer =
-      timeLeft > 0 && setInterval(() => setTimeLeft(timeLeft - 1), 1000);
-    return () => clearInterval(timer);
-  }, [timeLeft]);
+  const [score, setScore] = useState(0);
+  const coffees = [
+    "espresso",
+    "americano",
+    "cappuccino",
+    "latte",
+    "flat white",
+    "mocha",
+    "macciato",
+    "decaf",
+  ];
 
-  return (
+  return timeLeft ? (
     <main className="main">
       <section id="stats">
-        <h2>Time: {timeLeft}</h2>
-        <h2>Score: </h2>
+        <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+        <h2>Score: {score}</h2>
       </section>
+      <CoffeeOrder
+        coffees={coffees}
+        timeLeft={timeLeft}
+        setScore={setScore}
+        score={score}
+      />
     </main>
+  ) : (
+    <ResultsPage score={score} />
   );
 };
 
