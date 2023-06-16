@@ -6,9 +6,9 @@ const StartPage = ({ setStartGame }) => {
       {" "}
       <img src={logo} id="logo" alt="logo" />
       <p className="taunt">
-        HA YOU THINK YOU’RE EDGY BECAUSE YOU CAN MAKE A COFFEE.
+        HA! YOU THINK YOU’RE EDGY BECAUSE YOU CAN MAKE A COFFEE?
       </p>
-      <p>WELL LET'S SEE...</p>
+      <p>WELL, LET'S SEE...</p>
       <button id="startButton" onClick={() => setStartGame(true)}>
         START
       </button>

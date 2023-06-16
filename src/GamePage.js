@@ -5,6 +5,7 @@ import ResultsPage from "./ResultsPage";
 
 const GamePage = () => {
   const [timeLeft, setTimeLeft] = useState(60);
+  const [rating, setRating] = useState("");
 
   const [score, setScore] = useState(0);
   const coffees = [
@@ -14,7 +15,7 @@ const GamePage = () => {
     "latte",
     "flat white",
     "mocha",
-    "macciato",
+    "macchiato",
     "decaf",
   ];
 
@@ -29,10 +30,11 @@ const GamePage = () => {
         timeLeft={timeLeft}
         setScore={setScore}
         score={score}
+        setRating={setRating}
       />
     </main>
   ) : (
-    <ResultsPage score={score} />
+    <ResultsPage score={score} rating={rating} />
   );
 };
 

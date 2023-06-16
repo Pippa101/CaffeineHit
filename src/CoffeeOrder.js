@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CoffeeGrid from "./CoffeeGrid.js";
 
-const CoffeeOrder = ({ coffees, timeLeft, setScore, score }) => {
+const CoffeeOrder = ({ coffees, timeLeft, setScore, score, setRating }) => {
   const [coffeeRequest, setCoffeeRequest] = useState(null);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const CoffeeOrder = ({ coffees, timeLeft, setScore, score }) => {
         coffeeRequest={coffeeRequest}
         setScore={setScore}
         score={score}
+        setRating={setRating}
       />
     </section>
   );

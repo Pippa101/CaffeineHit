@@ -7,9 +7,16 @@ import flatwhite from "./images/flatwhite.svg";
 import mocha from "./images/mocha.svg";
 import macchiato from "./images/macchiato.svg";
 import decaf from "./images/decaf.svg";
-const CoffeeGrid = ({ coffeeRequest, setScore, score }) => {
-  const [coffeeAnswer, setCoffeeAnswer] = useState("");
 
+const CoffeeGrid = ({ coffeeRequest, setScore, score, setRating }) => {
+  const [coffeeAnswer, setCoffeeAnswer] = useState("");
+  if (score < 9) {
+    setRating("poor");
+  } else if (score > 9 && score < 25) {
+    setRating("not great");
+  } else {
+    setRating("alright");
+  }
   return (
     <section id="coffeeGrid">
       <button
